@@ -20,6 +20,7 @@ nnoremap <leader>ev :tabe $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 inoremap jk <esc>
+set nocompatible
 
 
 """""""""""""""""""""""""""
@@ -167,7 +168,7 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 set diffexpr=MyDiff()
-function MyDiff()
+function! MyDiff()
    let opt = '-a --binary '
    if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
    if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
