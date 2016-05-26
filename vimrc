@@ -44,7 +44,7 @@ set number
 """""""""""""""""""""""""""
 syntax enable
 
-colorscheme desert
+colorscheme delek
 set background=dark
 
 set encoding=utf8
