@@ -50,9 +50,17 @@ syntax enable
 colorscheme delek
 set background=dark
 
-set encoding=utf8
+if has("win32")
+    set encoding=latin1
+else
+    set encoding=utf8
+endif
 
-set ffs=unix,dos,mac
+if has("win32")
+    set ffs=dos,unix,mac
+else
+    set ffs=unix,dos,mac
+endif
 
 
 """""""""""""""""""""""""""
