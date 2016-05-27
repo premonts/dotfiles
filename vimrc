@@ -9,6 +9,9 @@ execute pathogen#infect()
 filetype plugin on
 filetype indent on
 
+if has("win32")
+    let g:fugitive_git_executable = "\"c:\\Program Files\\Git\\bin\\git.exe\""
+endif
 
 let mapleader = ","
 let g:mapleader = ","
