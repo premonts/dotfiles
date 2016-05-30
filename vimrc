@@ -18,6 +18,7 @@ let g:mapleader = ","
 
 nmap <leader>w :w!<cr>
 nmap <leader>wq :wq!<cr>
+nmap <leader>q :q!<cr>
 
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
