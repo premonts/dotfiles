@@ -20,7 +20,7 @@ nmap <leader>w :w!<cr>
 nmap <leader>wq :wq!<cr>
 nmap <leader>q :q!<cr>
 
-nnoremap <leader>ev :tabe $MYVIMRC<CR>
+nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 inoremap jk <esc>
@@ -78,8 +78,8 @@ set noswapfile
 """""""""""""""""""""""""""
 set expandtab
 set smarttab
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 
@@ -105,6 +105,10 @@ map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>te :tabe<space>
 map <leader>tm :tabmove
+
+map <leader>n :bn<cr>
+map <leader>b :bp<cr>
+map <leader>d :bw<cr>
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
