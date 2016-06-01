@@ -23,6 +23,8 @@ nmap <leader>q :q!<cr>
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
+nnoremap <leader>cd :cd %:p:h<CR>
+
 inoremap jk <esc>
 set nocompatible
 
@@ -41,6 +43,7 @@ set lazyredraw
 set showmatch
 set mat=2
 set number
+set relativenumber
 
 
 """""""""""""""""""""""""""
@@ -48,7 +51,7 @@ set number
 """""""""""""""""""""""""""
 syntax enable
 
-colorscheme delek
+colorscheme desert
 set background=dark
 
 if has("win32")
