@@ -6,6 +6,7 @@ execute pathogen#infect()
 """""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""
+" Enable filetype plugin
 filetype plugin on
 filetype indent on
 
@@ -32,17 +33,38 @@ set nocompatible
 """""""""""""""""""""""""""
 " VIM user interface
 """""""""""""""""""""""""""
+" set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 
+" Always show current position
 set ruler
+
+" Ignore case when searching
 set ignorecase
+
+" When searching try to be smart about cases
 set smartcase
+
+" Highlight search results
 set hlsearch
+
+" Makes search act like search in modern browsers
 set incsearch
+
+" Don't redraw while executing macros (good performance config)
 set lazyredraw
+
+" Show matching brackets when text indicator is over them
 set showmatch
+
+" How many tenths of a second to blink when matching brackets
 set mat=2
+
+" Show line number
 set number
+
+" Use relative line number (the current line is 0 and decrement
+" going up and increment going down the file
 set relativenumber
 
 
@@ -56,13 +78,9 @@ set background=dark
 
 if has("win32")
     set encoding=latin1
-else
-    set encoding=utf8
-endif
-
-if has("win32")
     set ffs=dos,unix,mac
 else
+    set encoding=utf8
     set ffs=unix,dos,mac
 endif
 
@@ -79,16 +97,24 @@ set noswapfile
 """""""""""""""""""""""""""
 " Text, tab and indent related
 """""""""""""""""""""""""""
+" User spaces instead of tabs
 set expandtab
+
+" Be smart when using tabs
 set smarttab
+
+" 1 tab == 2 spaces
 set shiftwidth=2
 set tabstop=2
+
 set ai "Auto indent
 set si "Smart indent
 
 """""""""""""""""""""""""""
 " Visual mode related
 """""""""""""""""""""""""""
+" Visual mode pressing * or # searches for the current selection
+" Super useful! From an idea by Michael Naumann
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
 
@@ -101,6 +127,9 @@ map k gk
 
 map <space> /
 map <c-space> ?
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
 
 map <leader>tn :tabnext<cr>
 map <leader>tp :tabprevious<cr>
@@ -124,6 +153,14 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 set laststatus=2
 set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
+""""""""""""""""""""""""""
+" Editing mappings
+""""""""""""""""""""""""""
+" Move a line of text using ALT+[jk] Comamnd+[jk] on mac
+nmap <A-j> mz:m+<cr>`z
+nmap <A-k> mz:m-2<cr>`z
+vmap <A-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <A-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 """""""""""""""""""""""""""
 " vim-repeat
