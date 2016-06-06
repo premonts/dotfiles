@@ -130,7 +130,7 @@ map <space> /
 map <c-space> ?
 
 " Disable highlight when <leader><cr> is pressed
-map <silent> <leader><cr> :noh<cr>
+map <silent> <leader><leader> :noh<cr>
 
 map <leader>tn :tabnext<cr>
 map <leader>tp :tabprevious<cr>
