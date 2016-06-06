@@ -9,6 +9,7 @@ execute pathogen#infect()
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
+set omnifunc=syntaxcomplete#Complete
 
 if has("win32")
     let g:fugitive_git_executable = "\"c:\\Program Files\\Git\\bin\\git.exe\""
@@ -151,8 +152,14 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 """""""""""""""""""""""""""
 
 set laststatus=2
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-
+set statusline=\ %{HasPaste()}
+set statusline+=%F%m%r%h\ %w
+set statusline+=\ \ 
+set statusline+=CWD:\ %r%{getcwd()}%h
+set statusline+=\ \ 
+set statusline+=FileType:\ %y
+set statusline+=\ \  
+set statusline+=Line:\ %l
 """"""""""""""""""""""""""
 " Editing mappings
 """"""""""""""""""""""""""
