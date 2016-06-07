@@ -25,6 +25,7 @@ nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 nnoremap <leader>cd :cd %:p:h<CR>
+nnoremap <leader><leader> :nohl<CR>
 
 inoremap jk <esc>
 set nocompatible
