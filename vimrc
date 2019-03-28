@@ -75,7 +75,7 @@ set relativenumber
 """""""""""""""""""""""""""
 syntax enable
 
-colorscheme desert
+colorscheme desert2
 set background=dark
 
 if has("win32")
