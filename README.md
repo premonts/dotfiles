@@ -1,20 +1,15 @@
 # dotvim
 
-Installation from ~
+Install stow (macos)
 
-    git clone git://github.com/premonts/dotvim.git ~/.vim
-
-Installation of submodules
-
-    cd ~/.vim
-    git submodule update --init
-
-Create symlinks (*nix)
-
-    ln -s ~/.vim/vimrc ~/.vimrc  
+    brew install stow
 
 
-Create symlinks (Windows) from home directory
+Clone repository in a folder 
+    git clone git://github.com/premonts/dotfiles.git ~/git/premonts
 
-    mklink .vimrc .vim/vimrc
-    mklink /d vimfiles .vim
+Use stow to create symlink (make sure ~/.config/nvim doesn't exist)
+
+    cd ~/git/premonts/dotfiles
+    stow -t ~ nvim
+
